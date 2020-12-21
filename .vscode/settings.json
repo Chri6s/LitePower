@@ -1,0 +1,12 @@
+{
+    "[javascript]": {
+        "editor.fontSize": 16
+    },
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": false
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "git.ignoreLimitWarning": true
+}
