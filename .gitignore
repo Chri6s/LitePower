@@ -4,3 +4,6 @@
 Backend/node_modules
 #unnecesseary files
 data.json
+Backend/package.json
+Backend/package-lock.json
+.htaccess

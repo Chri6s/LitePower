@@ -1,6 +1,6 @@
 <script>
-        if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
     }
 </script>
 <?php
@@ -20,7 +20,7 @@ $finalized_rawjson = file_get_contents('../data.json');
 $finalized_json = json_decode($finalized_rawjson, true);
 print_r($finalized_json);
 } elseif ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    echo "why are you looking at my postPuller script? HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM?";
+    echo "why are you looking at my postPuller script? Kudos for you, you found it!";
 }
 ?>
 <form action="" method="post">
@@ -31,6 +31,6 @@ print_r($finalized_json);
     <p>
         <input type="submit">
     </p>
-        
+
 
 </form>
