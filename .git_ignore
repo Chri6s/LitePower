@@ -1,0 +1,6 @@
+#unnecesseary folders
+.vscode
+.git
+Backend/node_modules
+#unnecesseary files
+data.json
