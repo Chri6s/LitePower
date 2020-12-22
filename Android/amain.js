@@ -9,12 +9,12 @@ var wphChart = new Chart(canvas, {
             label: 'Watts per hour(WpH)',
             data: [],
             backgroundColor: [
-                'rgba(0,0,128,0.6)',
-                'rgba(0,0,128,0.6)',
-                'rgba(0,0,128,0.6)',
-                'rgba(0,0,128,0.6)',
-                'rgba(0,0,128,0.6)',
-                'rgba(0,0,128,0.6)'
+                'rgba(247, 27, 27,0.6)',
+                'rgba(247, 27, 27,0.6)',
+                'rgba(247, 27, 27,0.6)',
+                'rgba(247, 27, 27,0.6)',
+                'rgba(247, 27, 27,0.6)',
+                'rgba(247, 27, 27,0.6)'
             ],
             borderColor: [
                 'rgba(0,0,0,1)',

@@ -6,13 +6,14 @@ var wphChart = new Chart(canvas, {
         datasets: [{
             label: 'Watts per hour(WpH)',
             data: [5, 2, 4, 2, 1, 2],
+            
             backgroundColor: [
-                'rgba(48, 2, 117, 0.6)',
-                'rgba(48, 2, 117, 0.6)',
-                'rgba(48, 2, 117, 0.6)',
-                'rgba(48, 2, 117, 0.6)',
-                'rgba(48, 2, 117, 0.6)',
-                'rgba(48, 2, 117, 0.6)'
+                'rgba(185,0,0,0.6)',
+                'rgba(185,0,0,0.6)',
+                'rgba(185,0,0,0.6)',
+                'rgba(185,0,0,0.6)',
+                'rgba(185,0,0,0.6)',
+                'rgba(185,0,0,0.6)'
             ],
             borderColor: [
                 'rgba(0, 0, 0, 1)',
@@ -25,10 +26,10 @@ var wphChart = new Chart(canvas, {
                 
             ],
             borderWidth: 0,
-
         }]
     },
     options: {
+        
         animation: {
             easing: 'easeInOutQuart',
             duration: 1000,
