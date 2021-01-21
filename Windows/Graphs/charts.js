@@ -1,5 +1,6 @@
+const WinCharts = new Module("WinCharts", "rgba(0, 8, 161)")
 const canvas = document.getElementById("wphcanv").getContext("2d");
-
+let Chartdata = fetch("/data.json").then(res => res.json()).then(data => {return data}).catch(error => console.log(error));
 var wphChart = new Chart(canvas, {
     type: 'line',
     data: {
@@ -47,3 +48,7 @@ var wphChart = new Chart(canvas, {
         }]
     }
 });
+function updateChart(Data) {
+    wphChart.data.datasets[0].data
+
+}

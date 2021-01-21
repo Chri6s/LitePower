@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sundata</title>
     <script src="/Backend/node_modules/chart.js/dist/Chart.js"></script>
-    <script src="charts.js" defer></script>
     <script src="main.js" defer></script>
 </head>
 
@@ -22,7 +21,11 @@
                 <img src="/images/icon.png" class="logo">
                 <h2>Welcome to the Sundata interface!</h2>
             </header>
+            <div id="mainheader">
+                <button id="chartUpdater">Update Charts</button>
+            </div>
             <div id="sections">
+
                 <section id="Graphs" class="sectionBox">
                     <h2><a href="./Graphs/Graphs.html">Graphs</a></h2>
                     <canvas id="wphcanv"></canvas>

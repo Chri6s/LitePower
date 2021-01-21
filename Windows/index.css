@@ -5,7 +5,11 @@ body, html {
     padding: 0%;
 }
 body {
-        background-color: #262626;
+    background-color: #262626;
+}
+button {
+    margin:0;
+    padding: 0;
 }
 #main {
     background-color: #323232DD;
@@ -62,5 +66,20 @@ a {
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
+}
+#mainheader {
+    padding-left: 45%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    display: block;
+}
+#chartUpdater {
+
+    border: 1px solid  white;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
 }
 a:hover, a:active, a:visited, a:hover, a:focus { text-decoration: none; color:white }
