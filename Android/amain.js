@@ -1,7 +1,10 @@
-const AndroidMain = new Module("AndroidMain", "rgb(248, 169, 254)");
+const AndroidMain = new Module("AndroidMain", "rgba(255,15,15,1)");
 const canvas = document.getElementById("wphcanv").getContext("2d");
 start();
 var Chartdata;
+var gradient = canvas.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, 'rgba(255,15,15,1)');
+gradient.addColorStop(1, 'rgba(255,90,0,1)');   
 var wphChart = new Chart(canvas, {
     type: 'line',
     data: {
@@ -9,8 +12,7 @@ var wphChart = new Chart(canvas, {
         datasets: [{
             label: 'Watts per hour(WpH)',
             data: [],
-            backgroundColor: [
-            ],
+            backgroundColor: gradient,
             borderColor: [
                 'rgba(0,0,0,1)',
                 'rgba(0,0,0,1)',
@@ -22,7 +24,7 @@ var wphChart = new Chart(canvas, {
 
             ],
             borderWidth: 0,
-
+            pointBackgroundColor: [],
         }]
     },
     options: {
@@ -57,11 +59,21 @@ var wphChart = new Chart(canvas, {
     },
 
 });
+
+function setupCharts() {
+	//setting the colors
+	var maxIndex = wphChart.data.labels.length;
+	for(var i = 0; i < maxIndex; i++) {
+		wphChart.data.labels[i] = Chartdata[i].Time;
+		wphChart.data.datasets[0].pointBackgroundColor[i] = "rgba(0,0,0, 0.4)";
+	}
+}
 async function start() {
-    await fetch("/data.json").then(res => res.json()).then(data => Chartdata = data).catch(error => console.log(error));
-    console.log(Chartdata);
-    document.title = `Sundata ${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`;
-    ChartVisualizer();
+	await fetch("/data.json").then(res => res.json()).then(data => Chartdata = data).catch(error => console.log(error));
+	console.log(Chartdata);
+	document.title = `Sundata ${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`;
+	setupCharts();
+	ChartVisualizer();
 }
 async function ChartVisualizer() {
     /*
@@ -75,7 +87,7 @@ async function ChartVisualizer() {
    */
     // setting the WpH
     for (var i = 0; i < 7; i++) {
-        if(i > 6) {
+        if (i > 6) {
             return;
         }
         wphChart.data.datasets[0].data[i] = Chartdata[i].wph;
