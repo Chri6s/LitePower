@@ -5,20 +5,21 @@ body, html {
     padding: 0%;
 }
 body {
-        width: 100%;
-        min-height: 100%;
-        background-color: #262626;
+    width: 100%;
+    min-height: 100%;
+    background: rgb(34,34,34);
+    background: linear-gradient(271deg, rgba(34,34,34,1) 0%, rgba(6,6,6,1) 100%);
 }
 #main {
     background-color: #323232DD;
     border: 3px solid #121212CC;
     border-radius: 10px;
-    width: 100%;
+    width: initial;
     height: 100%;
 }
 #container {
     padding-top: 5%;
-    width: 100%;
+    width: -webkit-fill-available;
     height: 100%;
 }
 #logoheader {
@@ -56,6 +57,7 @@ a {
     height: 100%;
 }
 #sections {
+    border-radius: 10px;
     height: 100%;
     width: 100%;
     display: flex;
