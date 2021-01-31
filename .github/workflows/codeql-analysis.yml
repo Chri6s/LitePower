@@ -65,14 +65,3 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-    - name: npm update checker
-      # You may pin to the exact commit or the version.
-      # uses: MeilCli/npm-update-check-action@4193aadca5e6e48ce2e88510d43a98a3e05cb9b9
-      uses: MeilCli/npm-update-check-action@v4.0.0
-      with:
-        # execute directories of npm outdated command
-        execute_directories: true # optional
-        # max depth for checking dependency tree
-        depth: 4 # optional
-        # output text style, value: short or long
-        output_text_style: long # default is short
