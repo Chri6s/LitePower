@@ -1,5 +1,5 @@
 # Sundata
 An arduino uno powered solar panel monitoring software.
-# To-Do list
+# Goals list(In order of priority)
+- Finish Android version before Windows
 - Finalize UI design
-- Get some interactivity here and there

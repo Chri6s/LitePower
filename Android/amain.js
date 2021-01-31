@@ -1,7 +1,7 @@
 const AndroidMain = new Module("AndroidMain", "rgba(255,15,15,1)");
 const canvas = document.getElementById("wphcanv").getContext("2d");
-start();
 var Chartdata;
+start();
 var gradient = canvas.createLinearGradient(0, 0, 0, 400);
 gradient.addColorStop(0, 'rgba(255,15,15,1)');
 gradient.addColorStop(1, 'rgba(255,90,0,1)');   
@@ -25,24 +25,30 @@ var wphChart = new Chart(canvas, {
             ],
             borderWidth: 0,
             pointBackgroundColor: [],
+            pointBorderColor: [],
+            pointBorderWidth: 1,
         }]
     },
     options: {
-        animation: {
-            duration: 1000,
-        },
         hover: {
             animationDuration: 0
         },
         responsiveAnimationDuration: 0,
-        elements: {
-            line: {
-                tension: 0.25,
-            }
-        },
+		elements: {
+			point: {
+				pointStyle: 'cross',
+				rotation: 45,
+				radius: 7,
+			},
+			line: {
+                cubicInterpolationMode: 'monotone',
+                steppedLine: 'after'
+			}
+		},
         scales: {
             yAxes: [{
                 ticks: {
+                    max: 100,
                     stepSize: 5,
                     maxTicksLimit: 100,
                     suggestedMin: 0,
@@ -65,7 +71,8 @@ function setupCharts() {
 	var maxIndex = wphChart.data.labels.length;
 	for(var i = 0; i < maxIndex; i++) {
 		wphChart.data.labels[i] = Chartdata[i].Time;
-		wphChart.data.datasets[0].pointBackgroundColor[i] = "rgba(0,0,0, 0.4)";
+        wphChart.data.datasets[0].pointBorderColor[i] = "rgba(200,200,200,0.66)";
+        wphChart.data.datasets[0].pointBackgroundColor[i] = gradient;
 	}
 }
 async function start() {
