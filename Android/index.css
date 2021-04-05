@@ -9,7 +9,7 @@ footer {
     bottom: 0;
     left: 0;
     color: aliceblue;
-    height: 15vh;
+    height: 10vh;
     background-color: rgba(0,0,0,0.2);
     width:100%;
 
@@ -79,9 +79,6 @@ a {
     padding: 0;
     margin: 0;
 }
-#logo-container {
-    text-align:right;
-}
 #github-logo {
     transform-origin: 50% 50%;
     transform: rotate(-90deg);
@@ -96,15 +93,10 @@ a {
     from {
         transform:rotate(-90deg)
     }
-    25% {
-      transform:rotate(0deg) ;
-    }
     50% {
       transform:rotate(90deg) ;
     }
-    75% {
-      transform:rotate(180deg) ;
-    }
+
     100% {
       transform:rotate(270deg) ;
     }
@@ -114,6 +106,14 @@ a {
 
     animation: logo-hover 1s ease-in-out 1 alternate;
 
+}
+.warning {
+    border-radius: 6px 6px 0px 0px;
+    vertical-align: middle;
+    font-size: 14px;
+    height: 5vh;
+    background-color: #d43e38;
+    text-align: center;
 }
 #img-container {   
     transform: rotate(90deg);
@@ -126,4 +126,4 @@ a {
     top: 0;
     right: 0;
 }
-a:hover, a:active, a:visited, a:hover, a:focus { text-decoration: none; color:white }
+a:hover, a:active, a:visited, a:hover, a:focus, a  { text-decoration: none; color:white }

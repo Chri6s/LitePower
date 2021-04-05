@@ -30,10 +30,7 @@ var wphChart = new Chart(canvas, {
         }]
     },
     options: {
-        hover: {
-            animationDuration: 0
-        },
-        responsiveAnimationDuration: 0,
+        responsiveAnimationDuration: 1000,
 		elements: {
 			point: {
 				pointStyle: 'cross',
@@ -42,7 +39,7 @@ var wphChart = new Chart(canvas, {
 			},
 			line: {
                 cubicInterpolationMode: 'monotone',
-                steppedLine: 'after'
+                steppedLine: 'before'
 			}
 		},
         scales: {
@@ -76,6 +73,12 @@ function setupCharts() {
 	}
 }
 async function start() {
+    if(window.matchMedia("orientation: portrait").matches == false) {
+        var warning = document.getElementsByClassName("warning")[0];
+        warning.style.display = "none";
+    } else {
+
+    }
 	await fetch("/data.json").then(res => res.json()).then(data => Chartdata = data).catch(error => console.log(error));
 	console.log(Chartdata);
 	document.title = `Sundata ${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`;
@@ -83,16 +86,6 @@ async function start() {
 	ChartVisualizer();
 }
 async function ChartVisualizer() {
-    /*
-    / (5) [{…}, {…}, {…}, {…}, {…}]
-    / 0: {Time: "22/26", wph: "641"}
-    / 1: {Time: "22/26", wph: "200"}
-    / 2: {Time: "22/48", wph: "200"}
-    / 3: {Time: "10/31/22/49", wph: "200"}
-    / 4: {Time: "10/31-22:50", wph: "9000000000"}
-    / Display by days? or by hours? 🤔
-   */
-    // setting the WpH
     for (var i = 0; i < 7; i++) {
         if (i > 6) {
             return;
