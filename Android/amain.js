@@ -76,22 +76,10 @@ async function start() {
     if(window.matchMedia("orientation: portrait").matches == false) {
         var warning = document.getElementsByClassName("warning")[0];
         warning.style.display = "none";
-    } else {
-
     }
 	await fetch("/data.json").then(res => res.json()).then(data => Chartdata = data).catch(error => console.log(error));
-	console.log(Chartdata);
+	AndroidMain.init();
+    console.log(Chartdata);
 	document.title = `Sundata ${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`;
 	setupCharts();
-	ChartVisualizer();
-}
-async function ChartVisualizer() {
-    for (var i = 0; i < 7; i++) {
-        if (i > 6) {
-            return;
-        }
-        wphChart.data.datasets[0].data[i] = Chartdata[i].wph;
-
-    }
-    wphChart.update();
 }

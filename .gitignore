@@ -1,1 +1,4 @@
 .prettierrc
+.vscode
+data.json
+/Backend/node_modules

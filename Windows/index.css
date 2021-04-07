@@ -1,20 +1,25 @@
+/*imports, fonts etc.*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @font-face {
     font-family: "Supreme"; 
     src: url("//db.onlinewebfonts.com/t/f462af0a8168d0a315da1c8d3fcf419b.eot"); 
     src: url("//db.onlinewebfonts.com/t/f462af0a8168d0a315da1c8d3fcf419b.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f462af0a8168d0a315da1c8d3fcf419b.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f462af0a8168d0a315da1c8d3fcf419b.woff") format("woff"), url("//db.onlinewebfonts.com/t/f462af0a8168d0a315da1c8d3fcf419b.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f462af0a8168d0a315da1c8d3fcf419b.svg#Supreme") format("svg");
 }
-a {
-    color: inherit;
-    text-decoration: none;
+/*Page header*/
+#logo-header {
+    box-shadow: 0px 5px 10px 1px #3a3a3a;
+    display: flex;
+    align-items: center;
+    padding-top: 3px;
+    height: 72px;
+    background-color: #DA2727;
 }
-body, html {
-    margin: 0%;
-    padding: 0%;
+.logo {
+    margin: auto;
+    height: 64px;
 }
-body {
-    background-color: #262626;
-}
+/*main content*/
 #main {
     background-color: #323232DD;
     border: 3px solid #121212CC;
@@ -28,23 +33,12 @@ body {
     width: 100%;
     height: 100%;
 }
-#logo-header {
-    box-shadow: 0px 5px 10px 1px #3a3a3a;
-    display: flex;
-    align-items: center;
-    padding-top: 3px;
-    height: 72px;
-    background-color: #DA2727;
-}
-.logo {
-    margin: auto;
-    height: 64px;
-}
-h2 {
+#Graphs > h2 {
     margin: auto;
     margin-left: 0;
-    font-family: 'Roboto', sans-serif;
+    text-decoration: none !important;
     color: white;
+    font-family: 'Supreme';
 }
 a {
     text-decoration: none;
@@ -56,11 +50,6 @@ a {
 #Graphs {
     text-align: center;
 }
-#Graphs > h2 {
-    text-decoration: none !important;
-    color: white;
-    font-family: 'Supreme';
-} 
 #wphcanv {
     margin: 0;
     width: 100%;
@@ -86,50 +75,66 @@ a {
     font-family: 'Supreme';
     color: white;   
 }
+/*Footer*/
+#main-container {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    border-top: 1px solid #202020 !important
+}
 footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
     bottom: 0;
     left: 0;
-    color: aliceblue;
+    color: white;
     height: 10vh;
-    background-color: rgba(0,0,0,0.2);
     width:100%;
 
 }
-#img-container {   
-    transform: rotate(90deg);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 100px 100px 0;
-    border-color: transparent rgba(0,0,0,0.4) transparent transparent;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
 #github-logo {
     transform-origin: 50% 50%;
-    transform: rotate(-90deg);
+    fill: rgb(255, 255, 255, 0.5);
     position: relative;
-    top: 17px;
-    left: 54px;
-    height: 31.77px;
-    width: 32.58px;
+    height: 50px;
+    width: 50px;
     
 }
-@keyframes logo-hover{
-    from {
-        transform:rotate(-90deg)
-    }
-    50% {
-      transform:rotate(90deg) ;
-    }
 
-    100% {
-      transform:rotate(270deg) ;
-    }
-}
 #github-logo:hover {
     animation: logo-hover 1s ease-in-out 1 alternate;
+    animation-fill-mode: forwards;
+}
+#main-container > p {
+    font-size: 12px;
+    color: #8b949e;
+}
+#main-container > a > p {
+    font-size: 12px;
+    color: #58a6ff;
+}
+/*Keyframes, reset code*/
+@keyframes logo-hover{
+    from {
+        fill: rgb(255, 255, 255, 0.5) ;
+    }
+    50% {
+        fill: rgb(255, 255, 255, 0.9);
+    }
+    100% {
+        fill: rgb(255, 255, 255, 0.8);
+    }
+}
+
+body, html {
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    background-color: #262626;
 }
 a:active, a:visited, a:hover, a:focus { text-decoration: none; color:white }
