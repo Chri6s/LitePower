@@ -1,5 +1,6 @@
 # Sundata
 [![CodeQL](https://github.com/FrimeX/Sundata/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/FrimeX/Sundata/actions/workflows/codeql-analysis.yml)
+
 A Solar Panel monitoring software built for low scale solar farms.
 # Milestones
 - (2020 June) - Project idea "foundations" have been made
