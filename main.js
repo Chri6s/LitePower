@@ -1,4 +1,3 @@
-const WindowsMain = new Module("WindowsMain", "rgba(218, 39, 39)")
 const canvas = document.getElementById("wphcanv").getContext("2d");
 var Chartdata;
 var wphChart = new Chart(canvas, {
@@ -74,7 +73,7 @@ start();
 async function start() { 
     var month = new Date().getMonth() + 1;
     document.title = "Sundata " + new Date().getFullYear() + "/" + month + "/" + new Date().getDate();
-    Chartdata = await fetch("/data.json").then(res => res.json()).then(data => Chartdata = data).catch(error => console.log(error));
+    Chartdata = await fetch("/Backend/data.json").then(res => res.json()).then(data => Chartdata = data).catch(error => console.log(error));
     setupCharts();
     return;
 }
