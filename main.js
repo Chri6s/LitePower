@@ -55,7 +55,7 @@ var wphChart = new Chart(canvas, {
                     suggestedMin: 0,
                     beginAtZero: true,
                     fontColor: 'rgba(218, 55, 55)',
-                    fontSize: 14,
+                    fontSize: 20,
                     fontFamily: "Ubuntu Mono",
                 }
             }],
@@ -63,15 +63,17 @@ var wphChart = new Chart(canvas, {
                 ticks: {
                     fontColor: 'rgba(218, 39, 39)',
                     fontFamily: "Ubuntu Mono",
-                    fontSize: 14,
+                    fontSize: 20,
                 }
             }]
         },
     },
 });
 start();
-async function start() { 
+async function start() {
+    var CurrYear = new Date().getYear();
     var month = new Date().getMonth() + 1;
+    document.getElementById("signature").innerHTML = `<strong> ${1900 + CurrYear} Christian Hozak</strong>`
     document.title = "Sundata " + new Date().getFullYear() + "/" + month + "/" + new Date().getDate();
     Chartdata = await fetch("/Backend/data.json").then(res => res.json()).then(data => Chartdata = data).catch(error => console.log(error));
     setupCharts();

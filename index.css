@@ -15,10 +15,13 @@
     display: flex;
     align-items: center;
     padding-top: 3px;
-    height: 72px;
+    height: 35px;
     background-color: #DA2727;
 }
 .logo {
+    border-color: #DA2727;
+    border-size: 5px;
+    border-radius: 10px;
     margin: auto;
     height: 64px;
 }
@@ -70,11 +73,16 @@
     align-items: center;
     padding-top: 3px;
     height: 2vh;
-    background-color: #121212DD;
+    background-color: #202020;
+    margin-bottom: 1vh;
 }
 #main-header > p {
+    border-size: 3px;
+    font-size: 27px;
     font-family: 'Supreme';
     color: white;   
+    margin: auto;
+    flex-wrap: wrap;
 }
 /*Footer*/
 #main-container {
