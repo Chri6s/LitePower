@@ -1,4 +1,4 @@
-# Sundata
+# LitePower
 [![CodeQL](https://github.com/FrimeX/Sundata/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/FrimeX/Sundata/actions/workflows/codeql-analysis.yml)
 
 A Solar Panel monitoring software built for low scale solar farms.
