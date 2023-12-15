@@ -1,13 +1,14 @@
 const canvas = document.getElementById("wphcanv").getContext("2d");
 var Chartdata;
+const lineColor = "rgba(0,77, 165)";
 var wphChart = new Chart(canvas, {
     type: 'line',
     data: {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
-            label: 'Watts per hour(WpH)',
+            label: 'WpH (Watts per hour)',
             data: [],
-            backgroundColor: "rgba(218, 39, 39)",
+            backgroundColor: lineColor,
             borderColor: [
                 'rgba(0,0,0,1)',
                 'rgba(0,0,0,1)',
@@ -29,7 +30,7 @@ var wphChart = new Chart(canvas, {
                 labels: {
                     font: {
                         size: 12,
-                        family: 'Ubuntu Mono',
+                        family: 'Monospace Regular',
                     }
                 }
             }
@@ -56,13 +57,13 @@ var wphChart = new Chart(canvas, {
                     beginAtZero: true,
                     fontColor: 'rgba(218, 55, 55)',
                     fontSize: 20,
-                    fontFamily: "Ubuntu Mono",
+                    fontFamily: "Monospace Regular",
                 }
             }],
             xAxes: [{
                 ticks: {
                     fontColor: 'rgba(218, 39, 39)',
-                    fontFamily: "Ubuntu Mono",
+                    fontFamily: "Monospace Regular",
                     fontSize: 20,
                 }
             }]
@@ -84,7 +85,7 @@ function setupCharts() {
 	var maxIndex = wphChart.data.labels.length;
 	for(var i = 0; i < maxIndex; i++) {
 		wphChart.data.labels[i] = Chartdata[i].Time;
-        wphChart.data.datasets[0].pointBorderColor[i] = "rgba(44,44,44,0.66)";
+        wphChart.data.datasets[0].pointBorderColor[i] = lineColor;
 	}
     for (var i = 0; i < 7; i++) {
         if (i > 6) {
